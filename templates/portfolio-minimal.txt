@@ -1,0 +1,58 @@
+import Link from "next/link";
+import { Code2, MonitorPlay, Layers, ArrowRight } from "lucide-react";
+
+export default function PortfolioPage() {
+  return (
+    <div className="min-h-screen bg-[#000000] text-white font-sans overflow-hidden selection:bg-[{{PRIMARY_COLOR}}] selection:text-black">
+      <div className="fixed inset-0 z-0 pointer-events-none">
+         <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full blur-[150px] opacity-20 mix-blend-screen" style={{ backgroundColor: '{{PRIMARY_COLOR}}' }} />
+         <div className="absolute bottom-1/4 left-1/4 w-[800px] h-[800px] rounded-full blur-[200px] opacity-10 mix-blend-screen animate-pulse" style={{ backgroundColor: '{{PRIMARY_COLOR}}' }} />
+      </div>
+
+      <nav className="relative z-50 flex justify-between items-center p-6 md:p-12 mix-blend-difference">
+         <div className="font-black text-2xl tracking-widest uppercase flex items-center gap-1">
+            <span style={{ color: '{{PRIMARY_COLOR}}' }}>/</span><span style={{ color: '{{PRIMARY_COLOR}}' }}>/</span> {{COMPANY_NAME}}
+         </div>
+         <a href="mailto:{{CONTACT_EMAIL}}" className="border-b-2 pb-1 font-bold text-sm tracking-widest uppercase hover:text-white text-zinc-400 transition-colors" style={{ borderColor: '{{PRIMARY_COLOR}}' }}>Porozmawiajmy</a>
+      </nav>
+
+      <main className="relative z-10 flex flex-col items-center justify-center min-h-[75vh] text-center px-4">
+         <h1 className="text-[14vw] sm:text-[10vw] font-black leading-[0.85] tracking-tighter uppercase mix-blend-difference drop-shadow-2xl">
+            Kreujemy <br/> 
+            <i className="font-serif italic font-light block mt-4" style={{ color: '{{PRIMARY_COLOR}}' }}>Cyfrowe Moduły.</i>
+         </h1>
+         
+         <p className="mt-12 text-xl md:text-3xl text-zinc-400 max-w-4xl font-light leading-relaxed">
+            Ekskluzywne studio deweloperskie MDK. Osiągamy wydajność renderowania na krawędzi możliwości dzisiejszych przeglądarek.
+         </p>
+
+         <button className="mt-16 text-black font-black uppercase tracking-widest px-10 py-6 transition-transform hover:scale-105 flex items-center gap-4 group" style={{ backgroundColor: '{{PRIMARY_COLOR}}' }}>
+            {{CTA_TEXT}}
+            <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
+         </button>
+
+         <div className="mt-32 grid grid-cols-1 sm:grid-cols-3 gap-0 max-w-7xl mx-auto w-full text-left border-y border-zinc-900 border-x-0">
+            <div className="p-10 hover:bg-zinc-950 transition-colors group md:border-r border-zinc-900 border-b md:border-b-0">
+               <MonitorPlay size={40} className="mb-6 text-zinc-600 transition-colors" style={{ color: '{{PRIMARY_COLOR}}' }} />
+               <h3 className="text-xl font-bold uppercase mb-4 tracking-widest text-white">Generative UI</h3>
+               <p className="text-sm text-zinc-500 font-medium leading-relaxed">Interaktywne animacje w przeglądarce tworzone na żywo, korzystając z surowej potęgi matematyki fragmentów.</p>
+            </div>
+            <div className="p-10 hover:bg-zinc-950 transition-colors group md:border-r border-zinc-900 border-b md:border-b-0">
+               <Code2 size={40} className="mb-6 text-zinc-600 transition-colors" style={{ color: '{{PRIMARY_COLOR}}' }} />
+               <h3 className="text-xl font-bold uppercase mb-4 tracking-widest text-white">Web Architektura</h3>
+               <p className="text-sm text-zinc-500 font-medium leading-relaxed">System zrzucony na serwer brzegowy Edge. Najniższy z możliwych Time-To-First-Byte oraz pełna skala wdrożeń SEO.</p>
+            </div>
+            <div className="p-10 hover:bg-zinc-950 transition-colors group">
+               <Layers size={40} className="mb-6 text-zinc-600 transition-colors" style={{ color: '{{PRIMARY_COLOR}}' }}/>
+               <h3 className="text-xl font-bold uppercase mb-4 tracking-widest text-white">Typografia & Brand</h3>
+               <p className="text-sm text-zinc-500 font-medium leading-relaxed">Wykluczamy standardowe klocki. Całe projekty ulegają taranowaniu nieszablonowym podejściem wizyjno-redaktorskim. Nagrody Awwwards.</p>
+            </div>
+         </div>
+      </main>
+
+      <footer className="w-full text-center py-10 mt-20 text-xs font-mono tracking-widest uppercase text-zinc-600">
+         {{ADDRESS}} // {{CONTACT_PHONE}}
+      </footer>
+    </div>
+  );
+}
