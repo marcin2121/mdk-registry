@@ -1,4 +1,4 @@
-// Digital Commerce 2026 (E-Learning / Cyfrowe Produkty) - Premium Template
+// Digital Commerce 2026 (E-Learning / Digital Products) - Premium Template
 "use client"
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -24,7 +24,7 @@ export default function DigitalCommerce() {
         >
           <div className="inline-flex items-center gap-2 bg-zinc-900 border border-zinc-800 rounded-full px-4 py-2 mb-6">
              <Star className="w-4 h-4 text-amber-500 fill-amber-500" />
-             <span className="text-xs font-medium text-zinc-300">LIMITOWANA EDYCJA 2026</span>
+             <span className="text-xs font-medium text-zinc-300">LIMITED EDITION 2026</span>
           </div>
 
           <h1 className="text-4xl md:text-6xl font-black tracking-tighter leading-none mb-6">

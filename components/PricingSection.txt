@@ -1,4 +1,4 @@
-// Pricing Section (Cennik / Pakiety) - Wstrzyknięto przez MDK Wizard Remote
+// Pricing Section - Injected by MDK Wizard Remote
 "use client"
 import { useState } from 'react';
 import { Check, HelpCircle } from 'lucide-react';
@@ -8,12 +8,12 @@ const tiers = [
   {
     name: "Starter",
     price: { monthly: 99, yearly: 890 },
-    description: "Idealny dla małych firm i freelancerów.",
+    description: "Perfect for small businesses and freelancers.",
     features: [
-      "Dostęp do podstawowych modułów",
+      "Access to basic modules",
       "Wsparcie mailowe (24h)",
       "Analityka standardowa",
-      "1 użytkownik",
+      "1 user",
     ],
     buttonText: "Rozpocznij teraz",
     popular: false
@@ -21,13 +21,13 @@ const tiers = [
   {
     name: "Pro",
     price: { monthly: 199, yearly: 1790 },
-    description: "Dla rozwijających się biznesów potrzebujących skali.",
+    description: "For growing businesses needing scale.",
     features: [
       "Wszystko co w Starter +",
       "Wsparcie priorytetowe (Czat)",
       "Zaawansowane raporty",
-      "Do 5 użytkowników",
-      "Własna domena",
+      "Up to 5 users",
+      "Custom domain",
     ],
     buttonText: "Wybierz Pro",
     popular: true
@@ -35,15 +35,15 @@ const tiers = [
   {
     name: "Enterprise",
     price: { monthly: 499, yearly: 4490 },
-    description: "Dedykowane rozwiązanie dla dużych organizacji.",
+    description: "Dedicated solution for large organizations.",
     features: [
-      "Pełny dostęp do API",
+      "Full API access",
       "Dedykowany opiekun (SLA 1h)",
-      "Nielimitowani użytkownicy",
-      "Indywidualne wdrożenie",
-      "Bezpieczeństwo SSO",
+      "Unlimited users",
+      "Custom implementation",
+      "SSO Security",
     ],
-    buttonText: "Skontaktuj się",
+    buttonText: "Contact Us",
     popular: false
   }
 ];
@@ -56,11 +56,11 @@ export default function PricingSection() {
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter text-white mb-4">Proste i przejrzyste ceny</h2>
-           <p className="text-zinc-400 mb-8">Wybierz plan dopasowany do Twoich potrzeb. Brak ukrytych kosztów.</p>
+           <p className="text-zinc-400 mb-8">Choose a plan that fits your needs. No hidden costs.</p>
            
            {/* Toggle */}
            <div className="flex items-center justify-center gap-4">
-              <span className={`text-sm font-bold ${!isYearly ? 'text-white' : 'text-zinc-500'}`}>Miesięcznie</span>
+              <span className={`text-sm font-bold ${!isYearly ? 'text-white' : 'text-zinc-500'}`}>Monthly</span>
               <button 
                  onClick={() => setIsYearly(!isYearly)}
                  className="w-14 h-7 bg-zinc-800 rounded-full p-1 flex items-center relative transition-colors duration-300"
@@ -73,7 +73,7 @@ export default function PricingSection() {
                  />
               </button>
               <span className={`text-sm font-bold flex items-center gap-1 ${isYearly ? 'text-white' : 'text-zinc-500'}`}>
-                 Rocznie <span className="text-xs bg-[var(--mdk-primary)]/20 text-[var(--mdk-primary)] px-2 py-0.5 rounded-full font-black">-15%</span>
+                 Yearly <span className="text-xs bg-[var(--mdk-primary)]/20 text-[var(--mdk-primary)] px-2 py-0.5 rounded-full font-black">-15%</span>
               </span>
            </div>
         </div>

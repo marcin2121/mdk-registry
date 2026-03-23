@@ -1,4 +1,4 @@
-// Testimonials Slider (Karuzela Opinii) - Wstrzyknięto przez MDK Wizard Remote
+// Testimonials Slider - Injected by MDK Wizard Remote
 "use client"
 import React from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
@@ -6,21 +6,21 @@ import { Quote, Star, ArrowLeft, ArrowRight } from 'lucide-react';
 
 const testimonials = [
   {
-    quote: "MDK skrócił czas produkcji naszej strony o połowę. Jakość kodu i gotowe bloki są na najwyższym poziomie. Bardzo polecam!",
+    quote: "MDK cut our site production time in half. Code quality and ready-made blocks are top-notch. Highly recommend!",
     author: "Anna Kowalska",
     role: "CEO na Startupie",
     avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150&auto=format&fit=crop",
     rating: 5
   },
   {
-    quote: "Przejrzysty kod, super animacje i pełna elastyczność. Dodanie nowej sekcji zajmuje teraz minuty, a nie godziny pracy programisty.",
+    quote: "Clean code, great animations and full flexibility. Adding a new section now takes minutes, not hours of developer work.",
     author: "Marek Nowak",
     role: "Fullstack Developer",
     avatar: "https://images.unsplash.com/photo-150700320443-3edc715c0a3e?q=80&w=150&auto=format&fit=crop",
     rating: 5
   },
   {
-    quote: "Szablon medyczny wygląda rewelacyjnie. Nasi pacjenci chwalą przejrzystość strony i łatwość rezerwacji wizyt.",
+    quote: "The medical template looks amazing. Our patients praise the site clarity and ease of booking appointments.",
     author: "dr Jan Kowal",
     role: "Kardiolog, Medisense",
     avatar: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=150&auto=format&fit=crop",
@@ -44,7 +44,7 @@ export default function TestimonialsSlider() {
       <div className="max-w-4xl mx-auto px-4 relative">
         <div className="text-center mb-12">
            <Quote className="w-12 h-12 text-[var(--mdk-primary)] opacity-40 mx-auto mb-4" />
-           <h2 className="text-2xl md:text-4xl font-black uppercase text-white">Co mówią nasi klienci</h2>
+           <h2 className="text-2xl md:text-4xl font-black uppercase text-white">What Our Clients Say</h2>
         </div>
 
         <div className="overflow-hidden" ref={emblaRef}>

@@ -12,8 +12,8 @@ export default function SaaSPage() {
             <span className="text-white">{{COMPANY_NAME}}</span>
          </div>
          <nav className="flex items-center gap-6 text-sm font-bold tracking-widest uppercase">
-            <span className="hidden sm:block text-zinc-500 hover:text-white transition-colors cursor-pointer">Cennik</span>
-            <Link href="/dashboard" className="transition-colors hover:text-white border border-zinc-800 px-6 py-2 hover:bg-zinc-900 text-zinc-400">Logowanie</Link>
+            <span className="hidden sm:block text-zinc-500 hover:text-white transition-colors cursor-pointer">Pricing</span>
+            <Link href="/dashboard" className="transition-colors hover:text-white border border-zinc-800 px-6 py-2 hover:bg-zinc-900 text-zinc-400">Sign In</Link>
             <button className="hidden sm:block text-black px-6 py-2 transition-transform hover:scale-105" style={{ backgroundColor: '{{PRIMARY_COLOR}}' }}>{{CTA_TEXT}}</button>
          </nav>
       </header>
@@ -23,7 +23,7 @@ export default function SaaSPage() {
          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-32">
             <div>
                <div className="inline-flex items-center gap-2 px-3 py-1 bg-zinc-900 border border-zinc-800 text-xs font-bold uppercase tracking-widest rounded-full mb-6 text-zinc-400">
-                  <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: '{{PRIMARY_COLOR}}' }} /> System Gotowy
+                  <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: '{{PRIMARY_COLOR}}' }} /> System Ready
                </div>
                <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-6 text-white leading-none" dangerouslySetInnerHTML={{ __html: `{{HERO_TITLE}}` }} />
                <p className="text-xl text-zinc-400 mb-10 max-w-xl font-medium leading-relaxed border-l-4 pl-6" style={{ borderColor: '{{PRIMARY_COLOR}}' }}>
@@ -35,7 +35,7 @@ export default function SaaSPage() {
                      {{CTA_TEXT}} <ArrowRight size={20} />
                   </button>
                   <button className="text-white bg-zinc-900 border border-zinc-800 font-bold uppercase tracking-widest px-8 py-5 transition-colors hover:bg-zinc-800">
-                     Dokumentacja
+                     Documentation
                   </button>
                </div>
             </div>
@@ -49,18 +49,18 @@ export default function SaaSPage() {
          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-32">
             <div className="p-8 border border-zinc-800 bg-[#0A0A0A] hover:-translate-y-2 transition-transform group">
                <BarChart3 size={40} style={{ color: '{{PRIMARY_COLOR}}' }} className="mb-6 opacity-80 group-hover:opacity-100" strokeWidth={1.5} />
-               <h3 className="text-xl font-bold uppercase tracking-tight text-white mb-2">Statystyki w Czasie Rzeczywistym</h3>
-               <p className="text-zinc-500 text-sm font-medium">Błyskawiczna integracja z bazą danych PostgreSQL. Zero opóźnień.</p>
+               <h3 className="text-xl font-bold uppercase tracking-tight text-white mb-2">Real-time Statistics</h3>
+               <p className="text-zinc-500 text-sm font-medium">Lightning-fast database integration PostgreSQL. Zero lag.</p>
             </div>
             <div className="p-8 border border-zinc-800 bg-[#0A0A0A] hover:-translate-y-2 transition-transform group">
                <Users size={40} style={{ color: '{{PRIMARY_COLOR}}' }} className="mb-6 opacity-80 group-hover:opacity-100" strokeWidth={1.5} />
-               <h3 className="text-xl font-bold uppercase tracking-tight text-white mb-2">Role & Uprawnienia</h3>
-               <p className="text-zinc-500 text-sm font-medium">Bezwzględne bezpieczeństwo rzędów dzięki natywnym politykom RLS.</p>
+               <h3 className="text-xl font-bold uppercase tracking-tight text-white mb-2">Roles & Permissions</h3>
+               <p className="text-zinc-500 text-sm font-medium">Absolute row-level security through native RLS policies.</p>
             </div>
             <div className="p-8 border border-zinc-800 bg-[#0A0A0A] hover:-translate-y-2 transition-transform group">
                <Zap size={40} style={{ color: '{{PRIMARY_COLOR}}' }} className="mb-6 opacity-80 group-hover:opacity-100" strokeWidth={1.5} />
-               <h3 className="text-xl font-bold uppercase tracking-tight text-white mb-2">Prędkość Edge</h3>
-               <p className="text-zinc-500 text-sm font-medium">Aplikacje renderowane bezpośrednio na węzłach Vercel dla 100/100 LH.</p>
+               <h3 className="text-xl font-bold uppercase tracking-tight text-white mb-2">Edge Speed</h3>
+               <p className="text-zinc-500 text-sm font-medium">Apps rendered directly on Vercel Edge nodes for 100/100 Lighthouse.</p>
             </div>
          </div>
       </main>

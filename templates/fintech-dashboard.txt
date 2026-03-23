@@ -1,4 +1,4 @@
-// Fintech Dashboard 2026 (Krypto / Nowoczesna Bankowość) - Premium Template
+// Fintech Dashboard 2026 (Crypto / Modern Banking) - Premium Template
 "use client"
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";

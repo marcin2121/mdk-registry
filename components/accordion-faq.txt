@@ -9,16 +9,16 @@ import { ChevronDown } from "lucide-react"
 
 export default function AccordionFAQ() {
   const faqs = [
-    { q: "Czym jest MDK Framework?", a: "MDK to zaawansowany zestaw deweloperski umożliwiający niemal natychmiastowe budowanie aplikacji SaaS i Landing Page opartych o Next.js oraz Supabase." },
-    { q: "Jak wygląda proces instalacji?", a: "Wystarczy uruchomić serwer, a graficzny instalator w przeglądarce zażąda od Ciebie podstawowych specyfikacji i skonfiguruje cały modułowy szkielet za Ciebie." },
-    { q: "Czy mogę modyfikować kod?", a: "Oczywiście. MDK wstrzykuje czysty kod React/TypeScript, który możesz dowolnie edytować i rozwijać zgodnie ze swoimi standardami." }
+    { q: "What is MDK Framework?", a: "MDK is an advanced development kit enabling near-instant building of SaaS and Landing Page applications based on Next.js and Supabase." },
+    { q: "How does the installation work?", a: "Just start the server and the graphical installer in the browser will ask for basic specs and configure the entire modular framework for you." },
+    { q: "Can I modify the code?", a: "Of course. MDK injects clean React/TypeScript code that you can freely edit and develop according to your standards." }
   ]
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
      <div className="py-24 bg-black">
         <div className="max-w-3xl mx-auto px-6">
-           <h2 className="text-3xl font-black uppercase tracking-tight text-white mb-12 text-center">Częste <span className="text-[var(--mdk-primary)]">Pytania</span> (FAQ)</h2>
+           <h2 className="text-3xl font-black uppercase tracking-tight text-white mb-12 text-center">Frequently <span className="text-[var(--mdk-primary)]">Asked</span> Questions</h2>
            <div className="space-y-4">
               {faqs.map((faq, i) => {
                  const isOpen = openIndex === i;

@@ -42,13 +42,13 @@ export default function LawyerCorporate() {
             {`{{HERO_IMAGE}}` ? <img src="{{HERO_IMAGE}}" alt="Kancelaria" className="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-multiply" /> : <div className="absolute inset-0 bg-stone-900" />}
             <div className="relative z-10 max-w-4xl border-l-4 pl-6 md:pl-12" style={{ borderColor: '{{PRIMARY_COLOR}}' }}>
                <h2 className="text-5xl sm:text-7xl md:text-8xl font-black uppercase tracking-tighter text-white mb-6 leading-none">
-                  Pomagamy Wygrywać <br/><span style={{ color: '{{PRIMARY_COLOR}}' }}>Trudne Sprawy.</span>
+                  We Help You Win <br/><span style={{ color: '{{PRIMARY_COLOR}}' }}>Tough Cases.</span>
                </h2>
                <p className="text-lg md:text-xl text-stone-400 font-medium mb-10 max-w-2xl">
-                  Kompleksowa pomoc prawna dla firm i osób prywatnych. Nasza wiedza i doświadczenie to Twój sukces w sądzie i biznesie.
+                  Comprehensive legal aid for businesses and individuals. Our knowledge and experience is your success in court and business.
                </p>
                <button className="px-10 py-5 font-black uppercase tracking-widest text-white transition-all hover:bg-[{{PRIMARY_COLOR}}]/90 text-sm flex items-center gap-4 cursor-pointer" style={{ backgroundColor: '{{PRIMARY_COLOR}}' }}>
-                  Zamów Bezpłatną Konsultację <ArrowRight size={18} />
+                  Book a Free Consultation <ArrowRight size={18} />
                </button>
             </div>
          </section>
@@ -61,11 +61,11 @@ export default function LawyerCorporate() {
             </div>
             <div>
                <div className="text-3xl md:text-5xl font-black text-white mb-2">15+</div>
-               <div className="text-xs font-bold uppercase text-stone-500">Lat Doświadczenia</div>
+               <div className="text-xs font-bold uppercase text-stone-500">Years of Experience</div>
             </div>
             <div>
                <div className="text-3xl md:text-5xl font-black text-white mb-2">200+</div>
-               <div className="text-xs font-bold uppercase text-stone-500">Stałych Klientów</div>
+               <div className="text-xs font-bold uppercase text-stone-500">Regular Clients</div>
             </div>
             <div>
                <div className="text-3xl md:text-5xl font-black text-white mb-2">24h</div>
@@ -77,23 +77,23 @@ export default function LawyerCorporate() {
          <section id="specjalizacje" className="py-24 px-6 lg:px-12 max-w-7xl mx-auto">
             <div className="text-center mb-16">
                <h2 className="text-2xl md:text-4xl font-black uppercase tracking-tighter text-white">Obszary Praktyki</h2>
-               <p className="text-stone-500 mt-2">W czym możemy Ci pomóc?</p>
+               <p className="text-stone-500 mt-2">How Can We Help?</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                <div className="p-8 border border-stone-900 bg-stone-950/40 rounded-xl hover:border-[{{PRIMARY_COLOR}}]/30 transition-all group">
                   <Landmark className="w-10 h-10 text-stone-400 group-hover:text-[{{PRIMARY_COLOR}}] mb-6 transition-colors" />
                   <h4 className="font-bold text-xl text-white mb-3">Prawo Biznesowe</h4>
-                  <p className="text-sm text-stone-500 leading-relaxed mb-6">Doradztwo korporacyjne, umowy, audyty prawne, fuzje i przejęcia.</p>
+                  <p className="text-sm text-stone-500 leading-relaxed mb-6">Corporate advisory, contracts, legal audits, mergers and acquisitions.</p>
                </div>
                <div className="p-8 border border-stone-900 bg-stone-950/40 rounded-xl hover:border-[{{PRIMARY_COLOR}}]/30 transition-all group">
                   <Shield className="w-10 h-10 text-stone-400 group-hover:text-[{{PRIMARY_COLOR}}] mb-6 transition-colors" />
                   <h4 className="font-bold text-xl text-white mb-3">Obrona Karna</h4>
-                  <p className="text-sm text-stone-500 leading-relaxed mb-6">Reprezentacja w procesach karnych, postępowaniu przygotowawczym.</p>
+                  <p className="text-sm text-stone-500 leading-relaxed mb-6">Representation in criminal cases and preliminary proceedings.</p>
                </div>
                <div className="p-8 border border-stone-900 bg-stone-950/40 rounded-xl hover:border-[{{PRIMARY_COLOR}}]/30 transition-all group">
                   <Briefcase className="w-10 h-10 text-stone-400 group-hover:text-[{{PRIMARY_COLOR}}] mb-6 transition-colors" />
                   <h4 className="font-bold text-xl text-white mb-3">Prawo Pracy</h4>
-                  <p className="text-sm text-stone-500 leading-relaxed mb-6">Stosunki pracy, spory sądowe, regulaminy i BHP.</p>
+                  <p className="text-sm text-stone-500 leading-relaxed mb-6">Labor relations, litigation, regulations and health & safety.</p>
                </div>
             </div>
          </section>
@@ -103,7 +103,7 @@ export default function LawyerCorporate() {
             <div className="max-w-2xl mx-auto">
                <Scale className="w-12 h-12 text-[{{PRIMARY_COLOR}}] mx-auto mb-6 opacity-80" />
                <h2 className="text-3xl font-black uppercase tracking-tighter text-white mb-4">Konsultacje Prawne</h2>
-               <p className="text-stone-400 mb-8">Zostaw nam kontakt, zadzwonimy i omówimy Twoją sytuację prawną w ciągu 24 godzin.</p>
+               <p className="text-stone-400 mb-8">Leave us your contact, we will call and discuss your legal situation within 24 hours.</p>
                <button className="px-8 py-4 font-black uppercase tracking-widest text-black transition-all text-sm cursor-pointer shadow-xl hover:opacity-90" style={{ backgroundColor: '{{PRIMARY_COLOR}}' }}>
                   {{CTA_TEXT}}
                </button>
@@ -112,7 +112,7 @@ export default function LawyerCorporate() {
       </main>
 
       <footer className="bg-black text-stone-600 py-12 px-6 lg:px-12 text-center text-xs border-t border-stone-950">
-         <p>&copy; {new Date().getFullYear()} {{COMPANY_NAME}}. Wszelkie prawa zastrzeżone. | <a href="#" className="underline">Polityka Prywatności</a></p>
+         <p>&copy; {new Date().getFullYear()} {{COMPANY_NAME}}. All rights reserved. | <a href="#" className="underline">Privacy Policy</a></p>
       </footer>
     </div>
   );

@@ -8,9 +8,9 @@ import { Star, Quote } from "lucide-react"
 
 export default function Testimonials() {
   const reviews = [
-    { id: 1, name: "Marcin Molenda", role: "CEO @ MD", text: "MDK to potężne narzędzie. Zbudowanie Landing Page dla klienta zabiera mi teraz godziny, a nie dni.", rating: 5 },
-    { id: 2, name: "Anna Kowalska", role: "Product Owner", text: "Design systemu layoutu rzuca na kolana. Prędkość ładowania 100/100 LH to standard.", rating: 5 },
-    { id: 3, name: "Tomasz Nowak", role: "SaaS Dev", text: "Gotowe moduły takie jak chatbot czy kalkulator kosztów to genialny dodatek do szybkich MVP.", rating: 5 }
+    { id: 1, name: "Marcin Molenda", role: "CEO @ MD", text: "MDK is a powerful tool. Building a Landing Page for a client now takes me hours, not days.", rating: 5 },
+    { id: 2, name: "Anna Smith", role: "Product Owner", text: "The layout system design is stunning. 100/100 Lighthouse loading speed is standard.", rating: 5 },
+    { id: 3, name: "Tom Anderson", role: "SaaS Dev", text: "Ready-made modules like chatbot or cost calculator are a brilliant addition for quick MVPs.", rating: 5 }
   ]
 
   return (
@@ -18,10 +18,10 @@ export default function Testimonials() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-white mb-4">
-            Co mówią <span className="text-[var(--mdk-primary)]">Klienci</span>
+            What Our <span className="text-[var(--mdk-primary)]">Clients</span> Say
           </h2>
           <p className="text-zinc-400 font-medium max-w-xl mx-auto text-sm">
-            Dowód społeczny słuszności wyboru frameworka MDK. Szybkość, design i konwersja.
+            Social proof of choosing MDK framework. Speed, design and conversion.
           </p>
         </div>
 

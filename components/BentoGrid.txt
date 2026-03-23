@@ -1,12 +1,12 @@
-// Bento Grid (Siatka Funkcji) - Wstrzyknięto przez MDK Wizard Remote
+// Bento Grid (Feature Grid) - Injected by MDK Wizard Remote
 "use client"
 import { motion } from "framer-motion";
 import { ArrowUpRight, BarChart3, Cloud, Globe, Lock, Shield, Zap } from "lucide-react";
 
 const items = [
   {
-    title: "Szybkość działania",
-    description: "Zoptymalizowane pod kątem wydajności i Core Web Vitals.",
+    title: "Performance Speed",
+    description: "Optimized for performance and Core Web Vitals.",
     icon: <Zap className="w-6 h-6 text-[var(--mdk-primary)]" />,
     className: "md:col-span-2 md:row-span-1 bg-zinc-950 border-zinc-900",
     graphic: (
@@ -17,13 +17,13 @@ const items = [
   },
   {
     title: "Zabezpieczenia",
-    description: "Szyfrowanie End-to-end i zgodność z normami.",
+    description: "End-to-end encryption and compliance.",
     icon: <Shield className="w-6 h-6 text-emerald-500" />,
     className: "bg-zinc-950 border-zinc-900",
   },
   {
-    title: "Globalny zasięg",
-    description: "Infrastruktura rozproszona na całym świecie.",
+    title: "Global Reach",
+    description: "Infrastructure distributed worldwide.",
     icon: <Globe className="w-6 h-6 text-blue-500" />,
     className: "bg-zinc-950 border-zinc-900",
   },
@@ -60,7 +60,7 @@ export default function BentoGrid() {
     <div className="py-20 px-4 max-w-6xl mx-auto">
       <div className="text-center mb-16">
          <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter text-white mb-4">Wszystko, czego potrzebujesz</h2>
-         <p className="text-zinc-500 max-w-xl mx-auto">Wbudowane funkcje, które pomogą Ci przeskalować biznes w kilka chwil.</p>
+         <p className="text-zinc-500 max-w-xl mx-auto">Built-in features to help you scale your business in minutes.</p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {items.map((item, index) => (
