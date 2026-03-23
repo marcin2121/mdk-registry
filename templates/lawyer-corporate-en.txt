@@ -1,0 +1,119 @@
+import Link from "next/link";
+import { Scale, Shield, Landmark, Briefcase, Phone, Mail, MapPin, ArrowRight } from "lucide-react";
+
+export default function LawyerCorporate() {
+  return (
+    <div className="min-h-screen bg-stone-950 text-stone-100 font-sans selection:bg-[{{PRIMARY_COLOR}}] selection:text-white">
+      
+      {/* Top Bar */}
+      <div className="bg-black text-stone-500 text-xs py-2 px-6 lg:px-12 flex justify-between items-center font-medium border-b border-stone-900">
+         <div className="flex items-center gap-6">
+            <span className="flex items-center gap-2"><Phone size={14} className="text-[{{PRIMARY_COLOR}}]"/> {{CONTACT_PHONE}}</span>
+            <span className="hidden sm:flex items-center gap-2"><Mail size={14} className="text-[{{PRIMARY_COLOR}}]"/> {{CONTACT_EMAIL}}</span>
+         </div>
+         <div className="flex items-center gap-2">
+            <MapPin size={14} className="text-[{{PRIMARY_COLOR}}]"/> {{ADDRESS}}
+         </div>
+      </div>
+
+      {/* Header */}
+      <header className="px-6 lg:px-12 h-20 flex items-center justify-between bg-zinc-950/80 backdrop-blur-md sticky top-0 z-50 border-b border-zinc-900">
+         <div className="flex items-center gap-2">
+            <Scale className="w-8 h-8" style={{ color: '{{PRIMARY_COLOR}}' }} />
+            <h1 className="font-black text-xl md:text-2xl tracking-tighter uppercase text-white">
+               {{COMPANY_NAME}}
+            </h1>
+         </div>
+         
+         <nav className="hidden md:flex gap-8 text-xs font-black uppercase tracking-widest text-stone-400">
+            <a href="#specjalizacje" className="hover:text-white transition-colors">Specjalizacje</a>
+            <a href="#o-kancelarii" className="hover:text-white transition-colors">O Kancelarii</a>
+            <a href="#kontakt" className="hover:text-white transition-colors">Kontakt</a>
+         </nav>
+
+         <Link href="/dashboard" className="px-6 py-3 text-xs font-black uppercase tracking-widest text-white transition-all hover:opacity-90 shadow-md border" style={{ borderColor: '{{PRIMARY_COLOR}}', backgroundColor: 'transparent' }}>
+            {{CTA_TEXT}}
+         </Link>
+      </header>
+
+      <main>
+         {/* Hero Section */}
+         <section className="relative w-full h-[75vh] flex flex-col justify-center px-6 lg:px-12 overflow-hidden border-b border-stone-900">
+            {`{{HERO_IMAGE}}` ? <img src="{{HERO_IMAGE}}" alt="Kancelaria" className="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-multiply" /> : <div className="absolute inset-0 bg-stone-900" />}
+            <div className="relative z-10 max-w-4xl border-l-4 pl-6 md:pl-12" style={{ borderColor: '{{PRIMARY_COLOR}}' }}>
+               <h2 className="text-5xl sm:text-7xl md:text-8xl font-black uppercase tracking-tighter text-white mb-6 leading-none">
+                  Pomagamy Wygrywać <br/><span style={{ color: '{{PRIMARY_COLOR}}' }}>Trudne Sprawy.</span>
+               </h2>
+               <p className="text-lg md:text-xl text-stone-400 font-medium mb-10 max-w-2xl">
+                  Kompleksowa pomoc prawna dla firm i osób prywatnych. Nasza wiedza i doświadczenie to Twój sukces w sądzie i biznesie.
+               </p>
+               <button className="px-10 py-5 font-black uppercase tracking-widest text-white transition-all hover:bg-[{{PRIMARY_COLOR}}]/90 text-sm flex items-center gap-4 cursor-pointer" style={{ backgroundColor: '{{PRIMARY_COLOR}}' }}>
+                  Zamów Bezpłatną Konsultację <ArrowRight size={18} />
+               </button>
+            </div>
+         </section>
+
+         {/* Stats Bar */}
+         <section className="bg-black py-12 px-6 lg:px-12 grid grid-cols-2 md:grid-cols-4 gap-8 text-center max-w-7xl mx-auto -mt-12 relative z-20 border border-stone-900 rounded-xl">
+            <div>
+               <div className="text-3xl md:text-5xl font-black text-white mb-2">98%</div>
+               <div className="text-xs font-bold uppercase text-stone-500">Wygranych Spraw</div>
+            </div>
+            <div>
+               <div className="text-3xl md:text-5xl font-black text-white mb-2">15+</div>
+               <div className="text-xs font-bold uppercase text-stone-500">Lat Doświadczenia</div>
+            </div>
+            <div>
+               <div className="text-3xl md:text-5xl font-black text-white mb-2">200+</div>
+               <div className="text-xs font-bold uppercase text-stone-500">Stałych Klientów</div>
+            </div>
+            <div>
+               <div className="text-3xl md:text-5xl font-black text-white mb-2">24h</div>
+               <div className="text-xs font-bold uppercase text-stone-500">Czas Reakcji</div>
+            </div>
+         </section>
+
+         {/* Practice Areas */}
+         <section id="specjalizacje" className="py-24 px-6 lg:px-12 max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+               <h2 className="text-2xl md:text-4xl font-black uppercase tracking-tighter text-white">Obszary Praktyki</h2>
+               <p className="text-stone-500 mt-2">W czym możemy Ci pomóc?</p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+               <div className="p-8 border border-stone-900 bg-stone-950/40 rounded-xl hover:border-[{{PRIMARY_COLOR}}]/30 transition-all group">
+                  <Landmark className="w-10 h-10 text-stone-400 group-hover:text-[{{PRIMARY_COLOR}}] mb-6 transition-colors" />
+                  <h4 className="font-bold text-xl text-white mb-3">Prawo Biznesowe</h4>
+                  <p className="text-sm text-stone-500 leading-relaxed mb-6">Doradztwo korporacyjne, umowy, audyty prawne, fuzje i przejęcia.</p>
+               </div>
+               <div className="p-8 border border-stone-900 bg-stone-950/40 rounded-xl hover:border-[{{PRIMARY_COLOR}}]/30 transition-all group">
+                  <Shield className="w-10 h-10 text-stone-400 group-hover:text-[{{PRIMARY_COLOR}}] mb-6 transition-colors" />
+                  <h4 className="font-bold text-xl text-white mb-3">Obrona Karna</h4>
+                  <p className="text-sm text-stone-500 leading-relaxed mb-6">Reprezentacja w procesach karnych, postępowaniu przygotowawczym.</p>
+               </div>
+               <div className="p-8 border border-stone-900 bg-stone-950/40 rounded-xl hover:border-[{{PRIMARY_COLOR}}]/30 transition-all group">
+                  <Briefcase className="w-10 h-10 text-stone-400 group-hover:text-[{{PRIMARY_COLOR}}] mb-6 transition-colors" />
+                  <h4 className="font-bold text-xl text-white mb-3">Prawo Pracy</h4>
+                  <p className="text-sm text-stone-500 leading-relaxed mb-6">Stosunki pracy, spory sądowe, regulaminy i BHP.</p>
+               </div>
+            </div>
+         </section>
+
+         {/* CTA Banner */}
+         <section id="kontakt" className="bg-gradient-to-r from-stone-950 to-[#0A0A0A] border-t border-stone-900 py-20 px-6 lg:px-12 text-center">
+            <div className="max-w-2xl mx-auto">
+               <Scale className="w-12 h-12 text-[{{PRIMARY_COLOR}}] mx-auto mb-6 opacity-80" />
+               <h2 className="text-3xl font-black uppercase tracking-tighter text-white mb-4">Konsultacje Prawne</h2>
+               <p className="text-stone-400 mb-8">Zostaw nam kontakt, zadzwonimy i omówimy Twoją sytuację prawną w ciągu 24 godzin.</p>
+               <button className="px-8 py-4 font-black uppercase tracking-widest text-black transition-all text-sm cursor-pointer shadow-xl hover:opacity-90" style={{ backgroundColor: '{{PRIMARY_COLOR}}' }}>
+                  {{CTA_TEXT}}
+               </button>
+            </div>
+         </section>
+      </main>
+
+      <footer className="bg-black text-stone-600 py-12 px-6 lg:px-12 text-center text-xs border-t border-stone-950">
+         <p>&copy; {new Date().getFullYear()} {{COMPANY_NAME}}. Wszelkie prawa zastrzeżone. | <a href="#" className="underline">Polityka Prywatności</a></p>
+      </footer>
+    </div>
+  );
+}

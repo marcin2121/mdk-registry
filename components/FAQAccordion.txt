@@ -44,7 +44,7 @@ export default function FAQAccordion() {
               return (
                  <div 
                     key={index} 
-                    className={`border rounded-xl transition-all duration-300 ${
+                    className={`border rounded-xl transition-colors duration-300 ${
                        isOpen 
                        ? 'border-[var(--mdk-primary)] bg-gradient-to-b from-zinc-900 to-black' 
                        : 'border-zinc-800 bg-zinc-900/40 hover:border-zinc-700'

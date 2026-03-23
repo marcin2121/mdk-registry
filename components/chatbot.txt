@@ -1,4 +1,9 @@
-﻿// Automatycznie wstrzyknięto przez MDK Wizard Remote Registry
+﻿/* MDK-METADATA
+{
+  "dependencies": []
+}
+*/
+// Automatycznie wstrzyknięto przez MDK Wizard Remote Registry
 "use client"
 import { useState } from 'react';
 

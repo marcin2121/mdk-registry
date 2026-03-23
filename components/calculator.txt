@@ -1,4 +1,9 @@
-﻿// Kalkulator z suwakiem - Wstrzyknięto przez MDK Wizard Remote
+﻿/* MDK-METADATA
+{
+  "dependencies": []
+}
+*/
+// Kalkulator z suwakiem - Wstrzyknięto przez MDK Wizard Remote
 "use client"
 import { useState } from 'react';
 
