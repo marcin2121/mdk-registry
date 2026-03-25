@@ -1,0 +1,97 @@
+﻿/* MDK-METADATA
+{
+  "dependencies": ["lucide-react", "framer-motion"]
+}
+*/
+// Calculator with slider - Injected by MDK Wizard Remote
+"use client"
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Calculator as CalcIcon, Lightbulb } from "lucide-react";
+
+export default function Calculator() {
+   const [val, setVal] = useState(50);
+   const [displayVal, setDisplayVal] = useState(50);
+
+   // Prosta animacja cyfr (smooth counter)
+   useEffect(() => {
+      const timeout = setTimeout(() => {
+         if (displayVal < val) setDisplayVal(prev => Math.min(prev + Math.ceil((val-prev)/5), val));
+         if (displayVal > val) setDisplayVal(prev => Math.max(prev - Math.ceil((prev-val)/5), val));
+      }, 20);
+      return () => clearTimeout(timeout);
+   }, [val, displayVal]);
+
+   const total = displayVal * 150;
+
+   return (
+      <motion.div 
+         className="my-20 p-8 border border-zinc-800/80 bg-[#070707]/90 backdrop-blur-md w-full max-w-2xl mx-auto rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative overflow-hidden group"
+         initial={{ opacity: 0, scale: 0.95 }}
+         whileInView={{ opacity: 1, scale: 1 }}
+         viewport={{ once: true }}
+         transition={{ duration: 0.5 }}
+      >
+         {/* Top Glow */}
+         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-1 bg-gradient-to-r from-transparent via-[var(--mdk-primary)] to-transparent" />
+
+         <div className="flex items-center gap-3 mb-8">
+            <div className="p-2.5 rounded-xl bg-[var(--mdk-primary)]/10 text-[var(--mdk-primary)]">
+               <CalcIcon size={20} />
+            </div>
+            <div>
+               <h2 className="text-xl font-black uppercase text-white tracking-tight">Project Cost Estimator</h2>
+               <p className="text-zinc-500 text-xs font-medium">Get a rough estimate for your custom system.</p>
+            </div>
+         </div>
+
+         <div className="flex flex-col gap-6 mb-10">
+            <div className="flex justify-between items-center">
+               <label className="text-zinc-400 font-bold uppercase text-xs tracking-wider">Order Scale</label>
+               <span className="text-zinc-300 font-mono text-sm bg-zinc-900 border border-zinc-800 px-3 py-1 rounded-md">
+                 <span className="text-[var(--mdk-primary)] font-bold">{val}</span> units
+               </span>
+            </div>
+            
+            <div className="relative flex items-center">
+               <input 
+                  type="range" 
+                  min="10" 
+                  max="500" 
+                  value={val} 
+                  onChange={e=>setVal(Number(e.target.value))} 
+                  className="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-[var(--mdk-primary)]" 
+               />
+               <div className="absolute h-2 bg-[var(--mdk-primary)] rounded-l-lg pointer-events-none" style={{ width: `${((val - 10) / 490) * 100}%` }} />
+            </div>
+         </div>
+
+         <motion.div 
+            className="mt-8 pt-8 border-t border-zinc-800/80 flex flex-col sm:flex-row justify-between items-center bg-[#030303] p-6 rounded-xl border border-zinc-900 shadow-inner gap-4"
+            layout
+         >
+            <div className="flex items-center gap-2">
+               <Lightbulb size={16} className="text-[var(--mdk-primary)] animate-pulse" />
+               <span className="text-zinc-400 font-bold uppercase text-xs tracking-wider">Estimated System Cost</span>
+            </div>
+            
+            <AnimatePresence mode="wait">
+               <motion.span 
+                  key={total}
+                  initial={{ opacity: 0, y: -5 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 5 }}
+                  transition={{ duration: 0.15 }}
+                  className="text-4xl font-black text-white tracking-tighter"
+               >
+                  {total.toLocaleString()} <span className="text-[var(--mdk-primary)] text-xl font-bold">USD</span>
+               </motion.span>
+            </AnimatePresence>
+         </motion.div>
+
+         <button className="w-full mt-6 py-4 bg-white text-black font-black uppercase tracking-widest text-xs rounded-xl hover:bg-[var(--mdk-primary)] hover:text-black transition-all duration-300 shadow-lg shadow-white/5 active:scale-[0.98]">
+            Get Detailed Quote
+         </button>
+      </motion.div>
+   )
+}

@@ -1,0 +1,96 @@
+import Link from "next/link";
+import { BarChart3, Users, Zap, ShieldCheck, ArrowRight, CheckCircle2 } from "lucide-react";
+import * as motion from "framer-motion/client"; // Używamy client component wrapper jeśli brak directive
+// Alternatywnie import { motion } jeśli to client component. Szablon ma "use client" wstrzykiwany jeśli trzeba, ale dodajmy bezpieczny motion lub standardowy import.
+
+export default function SaaSPage() {
+  return (
+    <div className="min-h-screen bg-[#030303] text-zinc-200 font-sans selection:bg-[{{PRIMARY_COLOR}}] selection:text-black relative overflow-hidden">
+      {/* Background Orbs */}
+      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[{{PRIMARY_COLOR}}]/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-40 right-1/4 w-[400px] h-[400px] bg-blue-500/5 rounded-full blur-[100px] pointer-events-none" />
+
+      <header className="border-b border-zinc-900/80 bg-[#070707]/80 px-6 h-20 flex items-center justify-between sticky top-0 z-50 backdrop-blur-md">
+         <div className="font-black text-2xl tracking-tighter uppercase flex items-center gap-3">
+            <div className="w-8 h-8 flex items-center justify-center rounded-lg shadow-lg shadow-[{{PRIMARY_COLOR}}]/20" style={{ backgroundColor: '{{PRIMARY_COLOR}}' }}>
+               <span className="text-black font-extrabold text-sm">S</span>
+            </div>
+            <span className="text-white tracking-widest text-xl">{{COMPANY_NAME}}</span>
+         </div>
+         <nav className="flex items-center gap-6 text-sm font-bold tracking-widest uppercase">
+            <span className="hidden sm:block text-zinc-500 hover:text-white transition-colors cursor-pointer">Pricing</span>
+            <Link href="/dashboard" className="transition-all hover:text-white border border-zinc-800/50 px-6 py-2 hover:bg-zinc-900 text-zinc-400 rounded-lg hover:border-zinc-700">Sign In</Link>
+            <button className="hidden sm:block text-black px-6 py-2 transition-all hover:translate-y-[-2px] hover:shadow-lg rounded-lg shadow-[{{PRIMARY_COLOR}}]/10" style={{ backgroundColor: '{{PRIMARY_COLOR}}' }}>{{CTA_TEXT}}</button>
+         </nav>
+      </header>
+
+      <main className="max-w-7xl mx-auto px-6 py-20 relative z-10">
+         
+         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-32 pt-10">
+            <div>
+               <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-zinc-900/80 border border-zinc-800/60 text-xs font-bold uppercase tracking-widest rounded-full mb-8 text-zinc-400 backdrop-blur-sm">
+                  <span className="w-2 h-2 rounded-full animate-pulse shadow-[0_0_8px] shadow-[{{PRIMARY_COLOR}}]" style={{ backgroundColor: '{{PRIMARY_COLOR}}' }} /> System Ready
+               </div>
+               <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-6 text-white leading-[0.9] bg-gradient-to-b from-white to-zinc-400 bg-clip-text text-transparent" dangerouslySetInnerHTML={{ __html: `{{HERO_TITLE}}` }} />
+               <p className="text-lg md:text-xl text-zinc-400 mb-10 max-w-xl font-medium leading-relaxed border-l-4 pl-6" style={{ borderColor: '{{PRIMARY_COLOR}}' }}>
+                  {{HERO_DESC}}
+               </p>
+               
+               <div className="flex flex-col sm:flex-row gap-4">
+                  <button className="text-black font-black uppercase tracking-widest px-8 py-5 transition-all hover:-translate-y-1 flex items-center justify-center gap-3 rounded-xl shadow-xl hover:shadow-[{{PRIMARY_COLOR}}]/20" style={{ backgroundColor: '{{PRIMARY_COLOR}}' }}>
+                     {{CTA_TEXT}} <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                  </button>
+                  <button className="text-white bg-zinc-900/50 border border-zinc-800/80 font-bold uppercase tracking-widest px-8 py-5 transition-all hover:bg-zinc-800 hovered:border-zinc-700 rounded-xl backdrop-blur-sm">
+                     Documentation
+                  </button>
+               </div>
+            </div>
+
+            <div className="relative group">
+               <div className="absolute inset-0 blur-[120px] opacity-30 pointer-events-none group-hover:opacity-40 transition-opacity duration-500" style={{ backgroundColor: '{{PRIMARY_COLOR}}' }} />
+               {`{{HERO_IMAGE}}` ? (
+                 <div className="relative z-10 p-2 bg-zinc-900/30 border border-zinc-800/50 rounded-3xl backdrop-blur-md shadow-2xl">
+                    <img src="{{HERO_IMAGE}}" alt="Dashboard" className="w-full aspect-square object-cover rounded-2xl border border-zinc-700/30" />
+                 </div>
+               ) : (
+                 <div className="w-full aspect-square border border-zinc-800 border-dashed rounded-3xl relative z-10 flex items-center justify-center text-zinc-700 font-mono text-sm bg-zinc-900/20 backdrop-blur-sm">
+                    (Brak Obrazu MDK)
+                 </div>
+               )}
+            </div>
+         </div>
+         
+         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-32">
+            <div className="p-8 border border-zinc-800/50 bg-[#070707]/60 backdrop-blur-sm hover:-translate-y-2 transition-all duration-300 group rounded-2xl hover:border-zinc-700">
+               <div className="w-12 h-12 rounded-xl bg-[{{PRIMARY_COLOR}}]/10 flex items-center justify-center mb-6 border border-[{{PRIMARY_COLOR}}]/20">
+                  <BarChart3 size={24} style={{ color: '{{PRIMARY_COLOR}}' }} className="opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all" strokeWidth={2} />
+               </div>
+               <h3 className="text-xl font-bold uppercase tracking-tight text-white mb-2 group-hover:text-[{{PRIMARY_COLOR}}] transition-colors">Real-time Statistics</h3>
+               <p className="text-zinc-500 text-sm font-medium leading-relaxed">Lightning-fast database integration PostgreSQL. Zero lag.</p>
+            </div>
+
+            <div className="p-8 border border-zinc-800/50 bg-[#070707]/60 backdrop-blur-sm hover:-translate-y-2 transition-all duration-300 group rounded-2xl hover:border-zinc-700">
+               <div className="w-12 h-12 rounded-xl bg-[{{PRIMARY_COLOR}}]/10 flex items-center justify-center mb-6 border border-[{{PRIMARY_COLOR}}]/20">
+                  <Users size={24} style={{ color: '{{PRIMARY_COLOR}}' }} className="opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all" strokeWidth={2} />
+               </div>
+               <h3 className="text-xl font-bold uppercase tracking-tight text-white mb-2 group-hover:text-[{{PRIMARY_COLOR}}] transition-colors">Roles & Permissions</h3>
+               <p className="text-zinc-500 text-sm font-medium leading-relaxed">Absolute row-level security through native RLS policies.</p>
+            </div>
+
+            <div className="p-8 border border-zinc-800/50 bg-[#070707]/60 backdrop-blur-sm hover:-translate-y-2 transition-all duration-300 group rounded-2xl hover:border-zinc-700">
+               <div className="w-12 h-12 rounded-xl bg-[{{PRIMARY_COLOR}}]/10 flex items-center justify-center mb-6 border border-[{{PRIMARY_COLOR}}]/20">
+                  <Zap size={24} style={{ color: '{{PRIMARY_COLOR}}' }} className="opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all" strokeWidth={2} />
+               </div>
+               <h3 className="text-xl font-bold uppercase tracking-tight text-white mb-2 group-hover:text-[{{PRIMARY_COLOR}}] transition-colors">Edge Speed</h3>
+               <p className="text-zinc-500 text-sm font-medium leading-relaxed">Apps rendered directly on Vercel Edge nodes for 100/100 Lighthouse.</p>
+            </div>
+         </div>
+      </main>
+
+      <footer className="border-t border-zinc-900/80 mt-20 py-12 text-center text-zinc-500 font-mono text-xs bg-[#050505]/80 backdrop-blur-md">
+         <p className="tracking-widest">{{CONTACT_EMAIL}} // {{CONTACT_PHONE}}</p>
+         <p className="mt-4 text-zinc-700">© 2026 {{COMPANY_NAME}}. Wygenerowano przez MDK.</p>
+      </footer>
+    </div>
+  );
+}

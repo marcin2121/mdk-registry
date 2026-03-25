@@ -26,9 +26,9 @@ export default function LawyerCorporate() {
          </div>
          
          <nav className="hidden md:flex gap-8 text-xs font-black uppercase tracking-widest text-stone-400">
-            <a href="#specjalizacje" className="hover:text-white transition-colors">Specjalizacje</a>
+            <a href="#specjalizacje" className="hover:text-white transition-colors">Specializations</a>
             <a href="#o-kancelarii" className="hover:text-white transition-colors">O Kancelarii</a>
-            <a href="#kontakt" className="hover:text-white transition-colors">Kontakt</a>
+            <a href="#contact" className="hover:text-white transition-colors">Contact</a>
          </nav>
 
          <Link href="/dashboard" className="px-6 py-3 text-xs font-black uppercase tracking-widest text-white transition-all hover:opacity-90 shadow-md border" style={{ borderColor: '{{PRIMARY_COLOR}}', backgroundColor: 'transparent' }}>
@@ -57,7 +57,7 @@ export default function LawyerCorporate() {
          <section className="bg-black py-12 px-6 lg:px-12 grid grid-cols-2 md:grid-cols-4 gap-8 text-center max-w-7xl mx-auto -mt-12 relative z-20 border border-stone-900 rounded-xl">
             <div>
                <div className="text-3xl md:text-5xl font-black text-white mb-2">98%</div>
-               <div className="text-xs font-bold uppercase text-stone-500">Wygranych Spraw</div>
+               <div className="text-xs font-bold uppercase text-stone-500">Cases Won</div>
             </div>
             <div>
                <div className="text-3xl md:text-5xl font-black text-white mb-2">15+</div>
@@ -69,40 +69,40 @@ export default function LawyerCorporate() {
             </div>
             <div>
                <div className="text-3xl md:text-5xl font-black text-white mb-2">24h</div>
-               <div className="text-xs font-bold uppercase text-stone-500">Czas Reakcji</div>
+               <div className="text-xs font-bold uppercase text-stone-500">Response Time</div>
             </div>
          </section>
 
          {/* Practice Areas */}
          <section id="specjalizacje" className="py-24 px-6 lg:px-12 max-w-7xl mx-auto">
             <div className="text-center mb-16">
-               <h2 className="text-2xl md:text-4xl font-black uppercase tracking-tighter text-white">Obszary Praktyki</h2>
+               <h2 className="text-2xl md:text-4xl font-black uppercase tracking-tighter text-white">Practice Areas</h2>
                <p className="text-stone-500 mt-2">How Can We Help?</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                <div className="p-8 border border-stone-900 bg-stone-950/40 rounded-xl hover:border-[{{PRIMARY_COLOR}}]/30 transition-all group">
                   <Landmark className="w-10 h-10 text-stone-400 group-hover:text-[{{PRIMARY_COLOR}}] mb-6 transition-colors" />
-                  <h4 className="font-bold text-xl text-white mb-3">Prawo Biznesowe</h4>
+                  <h4 className="font-bold text-xl text-white mb-3">Business Law</h4>
                   <p className="text-sm text-stone-500 leading-relaxed mb-6">Corporate advisory, contracts, legal audits, mergers and acquisitions.</p>
                </div>
                <div className="p-8 border border-stone-900 bg-stone-950/40 rounded-xl hover:border-[{{PRIMARY_COLOR}}]/30 transition-all group">
                   <Shield className="w-10 h-10 text-stone-400 group-hover:text-[{{PRIMARY_COLOR}}] mb-6 transition-colors" />
-                  <h4 className="font-bold text-xl text-white mb-3">Obrona Karna</h4>
+                  <h4 className="font-bold text-xl text-white mb-3">Criminal Defense</h4>
                   <p className="text-sm text-stone-500 leading-relaxed mb-6">Representation in criminal cases and preliminary proceedings.</p>
                </div>
                <div className="p-8 border border-stone-900 bg-stone-950/40 rounded-xl hover:border-[{{PRIMARY_COLOR}}]/30 transition-all group">
                   <Briefcase className="w-10 h-10 text-stone-400 group-hover:text-[{{PRIMARY_COLOR}}] mb-6 transition-colors" />
-                  <h4 className="font-bold text-xl text-white mb-3">Prawo Pracy</h4>
+                  <h4 className="font-bold text-xl text-white mb-3">Employment Law</h4>
                   <p className="text-sm text-stone-500 leading-relaxed mb-6">Labor relations, litigation, regulations and health & safety.</p>
                </div>
             </div>
          </section>
 
          {/* CTA Banner */}
-         <section id="kontakt" className="bg-gradient-to-r from-stone-950 to-[#0A0A0A] border-t border-stone-900 py-20 px-6 lg:px-12 text-center">
+         <section id="contact" className="bg-gradient-to-r from-stone-950 to-[#0A0A0A] border-t border-stone-900 py-20 px-6 lg:px-12 text-center">
             <div className="max-w-2xl mx-auto">
                <Scale className="w-12 h-12 text-[{{PRIMARY_COLOR}}] mx-auto mb-6 opacity-80" />
-               <h2 className="text-3xl font-black uppercase tracking-tighter text-white mb-4">Konsultacje Prawne</h2>
+               <h2 className="text-3xl font-black uppercase tracking-tighter text-white mb-4">Legal Consultations</h2>
                <p className="text-stone-400 mb-8">Leave us your contact, we will call and discuss your legal situation within 24 hours.</p>
                <button className="px-8 py-4 font-black uppercase tracking-widest text-black transition-all text-sm cursor-pointer shadow-xl hover:opacity-90" style={{ backgroundColor: '{{PRIMARY_COLOR}}' }}>
                   {{CTA_TEXT}}

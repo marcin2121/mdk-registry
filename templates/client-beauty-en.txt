@@ -3,88 +3,122 @@ import { MapPin, Phone, Clock, Mail, ArrowRight, Instagram, Facebook } from "luc
 
 export default function ClientWebsite() {
   return (
-    <div className="min-h-screen bg-stone-50 text-stone-900 font-sans selection:bg-[{{PRIMARY_COLOR}}] selection:text-white">
+    <div className="min-h-screen bg-[#FDFCFB] text-stone-900 font-sans selection:bg-[{{PRIMARY_COLOR}}] selection:text-white relative overflow-x-hidden">
       
-      <div className="bg-stone-900 text-stone-300 text-xs py-2 px-6 lg:px-12 flex justify-between items-center font-medium">
+      {/* Top Banner */}
+      <div className="bg-stone-950 text-stone-400 text-[11px] py-2.5 px-6 lg:px-12 flex justify-between items-center font-bold tracking-widest uppercase border-b border-stone-800">
          <div className="flex items-center gap-6">
-            <span className="hidden sm:flex items-center gap-2"><Phone size={14}/> {{CONTACT_PHONE}}</span>
-            <span className="flex items-center gap-2"><Mail size={14}/> {{CONTACT_EMAIL}}</span>
+            <span className="hidden sm:flex items-center gap-2 hover:text-white transition-colors"><Phone size={13} style={{ color: '{{PRIMARY_COLOR}}' }} /> {{CONTACT_PHONE}}</span>
+            <span className="flex items-center gap-2 hover:text-white transition-colors"><Mail size={13} style={{ color: '{{PRIMARY_COLOR}}' }} /> {{CONTACT_EMAIL}}</span>
          </div>
          <div className="flex items-center gap-4">
-            <a href="#" className="hover:text-white transition-colors"><Instagram size={14}/></a>
-            <a href="#" className="hover:text-white transition-colors"><Facebook size={14}/></a>
+            <a href="#" className="hover:text-[{{PRIMARY_COLOR}}] transition-colors"><Instagram size={14}/></a>
+            <a href="#" className="hover:text-[{{PRIMARY_COLOR}}] transition-colors"><Facebook size={14}/></a>
          </div>
       </div>
 
-      <header className="px-6 lg:px-12 h-20 flex items-center justify-between bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50">
-         <h1 className="font-black text-2xl sm:text-3xl tracking-tighter uppercase text-stone-900">
+      <header className="px-6 lg:px-12 h-20 flex items-center justify-between bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-stone-100">
+         <h1 className="font-black text-2xl sm:text-3xl tracking-tighter uppercase text-stone-900 flex items-center gap-2">
+            <span className="w-2 h-8" style={{ backgroundColor: '{{PRIMARY_COLOR}}' }} />
             {{COMPANY_NAME}}
          </h1>
-         <nav className="hidden md:flex gap-8 text-sm font-bold tracking-widest uppercase text-stone-600">
-            <a href="#uslugi" className="hover:text-black transition-colors">Services</a>
-            <a href="#kontakt" className="hover:text-black transition-colors">Location</a>
+         <nav className="hidden md:flex gap-8 text-xs font-black tracking-widest uppercase text-stone-500">
+            <a href="#uslugi" className="hover:text-black transition-colors relative group">
+               Services
+               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[{{PRIMARY_COLOR}}] group-hover:w-full transition-all duration-300" />
+            </a>
+            <a href="#contact" className="hover:text-black transition-colors relative group">
+               Location
+               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[{{PRIMARY_COLOR}}] group-hover:w-full transition-all duration-300" />
+            </a>
          </nav>
-         <Link href="/dashboard" className="px-6 py-3 text-sm font-black uppercase tracking-widest text-white transition-opacity hover:opacity-90 shadow-md" style={{ backgroundColor: '{{PRIMARY_COLOR}}' }}>
+         <Link href="/dashboard" className="px-6 py-3 text-xs font-black uppercase tracking-widest text-white transition-all hover:opacity-95 shadow-lg shadow-[{{PRIMARY_COLOR}}]/20 rounded-md hover:translate-y-[-1px] active:translate-y-0" style={{ backgroundColor: '{{PRIMARY_COLOR}}' }}>
             {{CTA_TEXT}}
          </Link>
       </header>
 
       <main>
-         <section className="relative w-full h-[75vh] flex flex-col justify-center px-6 lg:px-12 bg-stone-900 overflow-hidden">
-            {`{{HERO_IMAGE}}` ? <img src="{{HERO_IMAGE}}" alt="Background" className="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-overlay scale-105" /> : <div className="absolute inset-0 bg-stone-800" />}
+         <section className="relative w-full h-[80vh] flex flex-col justify-center px-6 lg:px-12 bg-stone-950 overflow-hidden">
+            {`{{HERO_IMAGE}}` ? (
+               <img src="{{HERO_IMAGE}}" alt="Background" className="absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-luminosity scale-105" />
+            ) : (
+               <div className="absolute inset-0 bg-gradient-to-br from-stone-900 to-stone-800" />
+            )}
             
-            <div className="relative z-10 max-w-4xl border-l-[8px] pl-6 md:pl-12" style={{ borderColor: '{{PRIMARY_COLOR}}' }}>
-               <h2 className="text-4xl sm:text-6xl md:text-8xl font-black uppercase tracking-tighter text-white mb-6 leading-[0.9] drop-shadow-xl">
-                  Your Business <br/><span style={{ color: '{{PRIMARY_COLOR}}' }}>At Your Fingertips.</span>
+            {/* Subtle Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-r from-stone-950 via-stone-950/70 to-transparent pointer-events-none" />
+
+            <div className="relative z-10 max-w-4xl border-l-4 pl-6 md:pl-10" style={{ borderColor: '{{PRIMARY_COLOR}}' }}>
+               <h2 className="text-4xl sm:text-6xl md:text-8xl font-black uppercase tracking-tighter text-white mb-6 leading-[0.85] drop-shadow-2xl">
+                  Your Business <br/>
+                  <span className="italic" style={{ color: '{{PRIMARY_COLOR}}' }}>At Your Fingertips.</span>
                </h2>
-               <p className="text-lg md:text-2xl text-stone-200 font-medium mb-10 max-w-2xl text-shadow-sm line-clamp-3">
+               <p className="text-base md:text-xl text-stone-300 font-medium mb-10 max-w-xl text-shadow-sm leading-relaxed">
                   Experts in comprehensive projects. Our experience translates into measurable results. Join us today.
                </p>
-               <button className="px-10 py-5 font-black uppercase tracking-widest text-black transition-all hover:translate-x-2 flex items-center gap-4 text-sm sm:text-base cursor-pointer" style={{ backgroundColor: '{{PRIMARY_COLOR}}' }}>
-                  {{CTA_TEXT}} <ArrowRight size={20} />
+               <button className="px-8 py-4 font-black uppercase tracking-widest text-black transition-all hover:translate-x-2 flex items-center gap-3 text-sm cursor-pointer rounded-r-xl" style={{ backgroundColor: '{{PRIMARY_COLOR}}' }}>
+                  {{CTA_TEXT}} <ArrowRight size={18} />
                </button>
             </div>
          </section>
 
-         <section className="py-24 px-6 lg:px-12 bg-white max-w-7xl mx-auto flex flex-col md:flex-row gap-16 items-center">
+         <section className="py-28 px-6 lg:px-12 bg-white max-w-7xl mx-auto flex flex-col md:flex-row gap-16 items-center">
             <div className="flex-1">
-               <h3 className="text-sm font-bold uppercase tracking-widest mb-4 border-b-2 pb-2 inline-block" style={{ borderColor: '{{PRIMARY_COLOR}}', color: '{{PRIMARY_COLOR}}' }}>Solid Foundations</h3>
-               <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter leading-tight mb-6">Why trust us?</h2>
-               <p className="text-lg text-stone-500 mb-8 leading-relaxed">
-                  We treat every project with the highest quality standards. We work efficiently, generating conversions.
+               <h3 className="text-[11px] font-black uppercase tracking-widest mb-4 inline-block px-3 py-1 bg-stone-100 rounded-full" style={{ color: '{{PRIMARY_COLOR}}' }}>Solid Foundations</h3>
+               <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter leading-none mb-6 text-stone-900">Why trust us?</h2>
+               <p className="text-base md:text-lg text-stone-500 mb-8 leading-relaxed font-medium">
+                  We treat every project with the highest quality standards. We work efficiently, generating conversions. Our team is dedicated to your growth.
                </p>
+               <ul className="space-y-3 mb-8">
+                  {['Skilled Professional Team', 'Tailored Business Solutions', '24/7 Premium Support'].map((item, i) => (
+                     <li key={i} className="flex items-center gap-2 text-stone-700 font-bold text-sm">
+                        <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: '{{PRIMARY_COLOR}}' }} />
+                        {item}
+                     </li>
+                  ))}
+               </ul>
             </div>
-            <div className="flex-1">
-               {`{{HERO_IMAGE}}` ? <img src="{{HERO_IMAGE}}" className="w-full aspect-[4/3] object-cover rounded-tr-[100px] rounded-bl-[100px] shadow-2xl" /> : <div className="w-full aspect-[4/3] bg-stone-200 rounded-[100px]"/>}
+            <div className="flex-1 relative">
+               <div className="absolute inset-0 bg-[{{PRIMARY_COLOR}}]/10 rounded-tr-[120px] rounded-bl-[120px] translate-x-4 translate-y-4 -z-10" />
+               {`{{HERO_IMAGE}}` ? (
+                  <img src="{{HERO_IMAGE}}" className="w-full aspect-[4/3] object-cover rounded-tr-[100px] rounded-bl-[100px] shadow-2xl border border-stone-200/50" />
+               ) : (
+                  <div className="w-full aspect-[4/3] bg-stone-100 rounded-[100px] border border-stone-200" />
+               )}
             </div>
          </section>
 
-         <section id="kontakt" className="py-24 px-6 lg:px-12 grid grid-cols-1 md:grid-cols-3 gap-0 bg-stone-100 max-w-7xl mx-auto rounded-3xl overflow-hidden shadow-sm mb-20 border-t-8" style={{ borderColor: '{{PRIMARY_COLOR}}' }}>
-            <div className="flex flex-col items-center text-center p-12 bg-white">
-               <div className="w-20 h-20 rounded-full flex items-center justify-center mb-6" style={{ backgroundColor: '{{PRIMARY_COLOR}}20' }}>
-                  <MapPin size={32} style={{ color: '{{PRIMARY_COLOR}}' }} />
+         <section id="contact" className="py-20 px-6 lg:px-12 grid grid-cols-1 md:grid-cols-3 gap-6 bg-stone-50 max-w-7xl mx-auto rounded-3xl overflow-hidden shadow-sm mb-24 border-t-4" style={{ borderColor: '{{PRIMARY_COLOR}}' }}>
+            <div className="flex flex-col items-center text-center p-10 bg-white rounded-2xl hover:shadow-md transition-shadow">
+               <div className="w-16 h-16 rounded-full flex items-center justify-center mb-6 shadow-md shadow-[{{PRIMARY_COLOR}}]/10" style={{ backgroundColor: '{{PRIMARY_COLOR}}20' }}>
+                  <MapPin size={24} style={{ color: '{{PRIMARY_COLOR}}' }} />
                </div>
-               <h3 className="text-xl font-black uppercase mb-3 tracking-tight">Headquarters</h3>
-               <p className="text-stone-500 font-medium max-w-[200px] leading-relaxed">{{ADDRESS}}</p>
+               <h3 className="text-lg font-black uppercase mb-3 tracking-tight text-stone-900">Headquarters</h3>
+               <p className="text-stone-500 font-medium max-w-[200px] leading-relaxed text-sm">{{ADDRESS}}</p>
             </div>
             
-            <div className="flex flex-col items-center text-center p-12 bg-stone-50 border-y md:border-y-0 md:border-x border-stone-200">
-               <div className="w-20 h-20 rounded-full flex items-center justify-center mb-6" style={{ backgroundColor: '{{PRIMARY_COLOR}}20' }}>
-                  <Phone size={32} style={{ color: '{{PRIMARY_COLOR}}' }} />
+            <div className="flex flex-col items-center text-center p-10 bg-white rounded-2xl hover:shadow-md transition-shadow">
+               <div className="w-16 h-16 rounded-full flex items-center justify-center mb-6 shadow-md shadow-[{{PRIMARY_COLOR}}]/10" style={{ backgroundColor: '{{PRIMARY_COLOR}}20' }}>
+                  <Phone size={24} style={{ color: '{{PRIMARY_COLOR}}' }} />
                </div>
-               <h3 className="text-xl font-black uppercase mb-3 tracking-tight">Open Line</h3>
-               <p className="text-stone-500 font-medium">{{CONTACT_PHONE}}<br/>{{CONTACT_EMAIL}}</p>
+               <h3 className="text-lg font-black uppercase mb-3 tracking-tight text-stone-900">Open Line</h3>
+               <p className="text-stone-500 font-medium text-sm">{{CONTACT_PHONE}}<br/>{{CONTACT_EMAIL}}</p>
             </div>
             
-            <div className="flex flex-col items-center text-center p-12 bg-white">
-               <div className="w-20 h-20 rounded-full flex items-center justify-center mb-6" style={{ backgroundColor: '{{PRIMARY_COLOR}}20' }}>
-                  <Clock size={32} style={{ color: '{{PRIMARY_COLOR}}' }} />
+            <div className="flex flex-col items-center text-center p-10 bg-white rounded-2xl hover:shadow-md transition-shadow">
+               <div className="w-16 h-16 rounded-full flex items-center justify-center mb-6 shadow-md shadow-[{{PRIMARY_COLOR}}]/10" style={{ backgroundColor: '{{PRIMARY_COLOR}}20' }}>
+                  <Clock size={24} style={{ color: '{{PRIMARY_COLOR}}' }} />
                </div>
-               <h3 className="text-xl font-black uppercase mb-3 tracking-tight">Service Availability</h3>
-               <p className="text-stone-500 font-medium">Monday - Friday<br/>09:00 - 18:00</p>
+               <h3 className="text-lg font-black uppercase mb-3 tracking-tight text-stone-900">Service Hours</h3>
+               <p className="text-stone-500 font-medium text-sm">Monday - Friday<br/>09:00 - 18:00</p>
             </div>
          </section>
       </main>
+
+      <footer className="border-t border-stone-200 mt-20 py-12 text-center text-stone-400 font-mono text-[11px] bg-stone-50">
+         <p className="tracking-wider">{{CONTACT_EMAIL}} // {{CONTACT_PHONE}}</p>
+         <p className="mt-4 text-stone-500 font-sans font-bold">© 2026 {{COMPANY_NAME}}. Generated by MDK.</p>
+      </footer>
     </div>
   );
 }

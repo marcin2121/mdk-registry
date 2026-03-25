@@ -1,0 +1,43 @@
+/* MDK-METADATA
+{
+  "dependencies": ["lucide-react"]
+}
+*/
+"use client"
+import { useState } from "react"
+import { ChevronDown } from "lucide-react"
+
+export default function AccordionFAQ() {
+  const faqs = [
+    { q: "What is MDK Framework?", a: "MDK is an advanced development kit enabling near-instant building of SaaS and Landing Page applications based on Next.js and Supabase." },
+    { q: "How does the installation work?", a: "Just start the server and the graphical installer in the browser will ask for basic specs and configure the entire modular framework for you." },
+    { q: "Can I modify the code?", a: "Of course. MDK injects clean React/TypeScript code that you can freely edit and develop according to your standards." }
+  ]
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  return (
+     <div className="py-24 bg-black">
+        <div className="max-w-3xl mx-auto px-6">
+           <h2 className="text-3xl font-black uppercase tracking-tight text-white mb-12 text-center">Frequently <span className="text-[var(--mdk-primary)]">Asked</span> Questions</h2>
+           <div className="space-y-4">
+              {faqs.map((faq, i) => {
+                 const isOpen = openIndex === i;
+                 return (
+                    <div key={i} className={`border border-zinc-800 bg-[#0A0A0A] rounded-xl overflow-hidden transition-all ${isOpen ? 'border-[var(--mdk-primary)]' : ''}`}>
+                       <button onClick={() => setOpenIndex(isOpen ? null : i)} className="w-full p-6 flex justify-between items-center text-left hover:bg-zinc-900/50 transition-colors">
+                          <span className="font-bold text-white tracking-tight">{faq.q}</span>
+                          <ChevronDown size={18} className={`text-[var(--mdk-primary)] transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
+                       </button>
+                       {isOpen && (
+                          <div className="p-6 pt-0 text-zinc-400 text-sm font-medium leading-relaxed animate-in fade-in slide-in-from-top-2">
+                             {faq.a}
+                          </div>
+                       )}
+                    </div>
+                 )
+              })}
+           </div>
+        </div>
+     </div>
+  )
+}

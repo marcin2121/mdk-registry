@@ -1,0 +1,85 @@
+// FAQ Accordion - Injected by MDK Wizard Remote
+"use client"
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Plus, Minus } from 'lucide-react';
+
+const faqs = [
+  {
+    question: "What does the implementation process look like?",
+    answer: "The process is simple. After choosing a template and configuring modules via our Wizard, we generate a ready repository. We create the project in minutes and you can start working on content immediately."
+  },
+  {
+    question: "Can I connect my own domain?",
+    answer: "Yes, absolutely. Every plan and template supports connecting your own domain. We also provide a free SSL certificate to start."
+  },
+  {
+    question: "Do I need to know React or Next.js?",
+    answer: "Not necessarily. If you only want to manage content, our templates can be connected to any headless CMS (e.g., Sanity, Strapi). Code editing is optional but gives full control."
+  },
+  {
+    question: "How long is the contract and can I cancel?",
+    answer: "The contract is monthly or yearly (with a discount). There are no long-term commitments – you can cancel at any time from the client panel."
+  }
+];
+
+export default function FAQAccordion() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const toggle = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
+  return (
+    <div className="py-20 px-4 bg-zinc-950 border-t border-zinc-900">
+      <div className="max-w-3xl mx-auto">
+        <div className="text-center mb-12">
+           <h2 className="text-2xl md:text-4xl font-black uppercase tracking-tighter text-white mb-4">Frequently Asked Questions</h2>
+           <p className="text-zinc-500">Wszystko, czego potrzebujesz to know before starting.</p>
+        </div>
+
+        <div className="space-y-3">
+           {faqs.map((faq, index) => {
+              const isOpen = openIndex === index;
+              return (
+                 <div 
+                    key={index} 
+                    className={`border rounded-xl transition-colors duration-300 ${
+                       isOpen 
+                       ? 'border-[var(--mdk-primary)] bg-gradient-to-b from-zinc-900 to-black' 
+                       : 'border-zinc-800 bg-zinc-900/40 hover:border-zinc-700'
+                    }`}
+                 >
+                    <button 
+                       onClick={() => toggle(index)}
+                       className="w-full p-6 flex justify-between items-center text-left"
+                    >
+                       <span className="font-bold text-white text-base md:text-lg">{faq.question}</span>
+                       <div className={`p-2 rounded-full ${isOpen ? 'bg-[var(--mdk-primary)] text-white' : 'bg-zinc-800 text-zinc-400'} transition-colors`}>
+                          {isOpen ? <Minus size={18} /> : <Plus size={18} />}
+                       </div>
+                    </button>
+
+                    <AnimatePresence>
+                       {isOpen && (
+                          <motion.div
+                             initial={{ height: 0, opacity: 0 }}
+                             animate={{ height: "auto", opacity: 1 }}
+                             exit={{ height: 0, opacity: 0 }}
+                             transition={{ duration: 0.3, ease: "easeInOut" }}
+                             className="overflow-hidden"
+                          >
+                             <div className="px-6 pb-6 text-zinc-400 text-sm md:text-base leading-relaxed">
+                                {faq.answer}
+                             </div>
+                          </motion.div>
+                       )}
+                    </AnimatePresence>
+                 </div>
+              );
+           })}
+        </div>
+      </div>
+    </div>
+  );
+}

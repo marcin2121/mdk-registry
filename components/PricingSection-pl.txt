@@ -23,7 +23,7 @@ const tiers = [
     price: { monthly: 199, yearly: 1790 },
     description: "For growing businesses needing scale.",
     features: [
-      "Wszystko co w Starter +",
+      "Wszystko co w Starter +++",
       "Wsparcie priorytetowe (Czat)",
       "Zaawansowane raporty",
       "Up to 5 users",
@@ -41,9 +41,9 @@ const tiers = [
       "Dedykowany opiekun (SLA 1h)",
       "Unlimited users",
       "Custom implementation",
-      "SSO Security",
+      "SSO Zabezpieczenia",
     ],
-    buttonText: "Contact Us",
+    buttonText: "Kontakt Us",
     popular: false
   }
 ];
@@ -104,7 +104,7 @@ export default function PricingSection() {
                        {isYearly ? tier.price.yearly : tier.price.monthly}
                     </span>
                     <span className="text-zinc-500 text-sm font-bold ml-1">
-                       PLN / {isYearly ? 'rok' : 'msc'}
+                       USD / {isYearly ? 'rok' : 'msc'}
                     </span>
                  </div>
 

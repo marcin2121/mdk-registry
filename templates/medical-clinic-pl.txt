@@ -26,7 +26,7 @@ export default function MedicalClinic() {
          </div>
          
          <nav className="hidden md:flex gap-8 text-sm font-bold uppercase tracking-wider text-neutral-600">
-            <a href="#uslugi" className="hover:text-black transition-colors">Our Services</a>
+            <a href="#uslugi" className="hover:text-black transition-colors">Our Usługi</a>
             <a href="#o-nas" className="hover:text-black transition-colors">O nas</a>
             <a href="#kontakt" className="hover:text-black transition-colors">Kontakt</a>
          </nav>
@@ -78,11 +78,11 @@ export default function MedicalClinic() {
             </div>
          </section>
 
-         {/* Services Grid */}
+         {/* Usługi Grid */}
          <section id="uslugi" className="py-24 px-6 lg:px-12 max-w-7xl mx-auto">
             <div className="text-center mb-16">
                <h2 className="text-sm font-bold uppercase tracking-widest mb-2" style={{ color: '{{PRIMARY_COLOR}}' }}>Nasza Specjalizacja</h2>
-               <h3 className="text-3xl md:text-5xl font-black uppercase tracking-tighter text-neutral-900">Medical Services</h3>
+               <h3 className="text-3xl md:text-5xl font-black uppercase tracking-tighter text-neutral-900">Medical Usługi</h3>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                {[1, 2, 3].map((_, i) => (
@@ -96,11 +96,11 @@ export default function MedicalClinic() {
             </div>
          </section>
 
-         {/* Stats / Contact summary */}
+         {/* Stats / Kontakt summary */}
          <section id="kontakt" className="bg-zinc-900 py-20 px-6 lg:px-12 text-center text-white">
             <div className="max-w-3xl mx-auto">
                <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tighter mb-4">Caring For Your Health Every Day</h2>
-               <p className="text-neutral-400 mb-8 max-w-xl mx-auto">Contact us to schedule a convenient appointment with your chosen specialist.</p>
+               <p className="text-neutral-400 mb-8 max-w-xl mx-auto">Kontakt us to schedule a convenient appointment with your chosen specialist.</p>
                <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <button className="px-8 py-4 font-black uppercase tracking-widest text-sm cursor-pointer" style={{ backgroundColor: '{{PRIMARY_COLOR}}' }}>{{CTA_TEXT}}</button>
                   <button className="px-8 py-4 border border-zinc-700 font-black uppercase tracking-widest text-sm hover:bg-zinc-800 transition-colors cursor-pointer">Kontakt</button>

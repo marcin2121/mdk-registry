@@ -43,12 +43,12 @@ export default function GastroRestaurant() {
             </div>
          </section>
 
-         {/* Hours & Location Bar */}
+         {/* Hours & Lokalizacja Bar */}
          <section className="bg-white py-12 px-6 lg:px-12 max-w-6xl mx-auto -mt-12 relative z-20 shadow-xl rounded-xl grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div className="flex flex-col items-center">
                <Clock className="w-8 h-8 mb-3" style={{ color: '{{PRIMARY_COLOR}}' }} />
                <h4 className="font-bold text-base mb-1">Godziny Otwarcia</h4>
-               <p className="text-xs text-stone-500">Pon-Czw: 12:00 - 22:00<br/>Pt-Ndz: 12:00 - 24:00</p>
+               <p className="text-xs text-stone-500">Mon-Thu: 12:00 - 22:00<br/>Fri-Sun: 12:00 - 24:00</p>
             </div>
             <div className="flex flex-col items-center border-y md:border-y-0 md:border-x border-stone-100 py-6 md:py-0">
                <MapPin className="w-8 h-8 mb-3" style={{ color: '{{PRIMARY_COLOR}}' }} />
@@ -57,7 +57,7 @@ export default function GastroRestaurant() {
             </div>
             <div className="flex flex-col items-center">
                <Phone className="w-8 h-8 mb-3" style={{ color: '{{PRIMARY_COLOR}}' }} />
-               <h4 className="font-bold text-base mb-1">Rezerwacje</h4>
+               <h4 className="font-bold text-base mb-1">Rezerwacjas</h4>
                <p className="text-xs text-stone-500">{{CONTACT_PHONE}}<br/>{{CONTACT_EMAIL}}</p>
             </div>
          </section>
@@ -78,7 +78,7 @@ export default function GastroRestaurant() {
                             <p className="text-xs text-stone-500 mt-1">Fresh herbs, original sauce, seasonal ingredients.</p>
                          </div>
                      </div>
-                     <span className="font-black text-xl text-stone-900">45 PLN</span>
+                     <span className="font-black text-xl text-stone-900">45 USD</span>
                   </div>
                ))}
             </div>
@@ -87,12 +87,12 @@ export default function GastroRestaurant() {
             </div>
          </section>
 
-         {/* Footer Grid / Contact summary */}
+         {/* Footer Grid / Kontakt summary */}
          <section id="rezerwacja" className="bg-stone-900 text-white py-20 px-6 lg:px-12 text-center">
             <div className="max-w-2xl mx-auto">
-               <h2 className="text-3xl font-black uppercase tracking-tighter mb-4">Planujesz Wydarzenie?</h2>
+               <h2 className="text-3xl font-black uppercase tracking-tighter mb-4">Planujesz Wydarzenie???</h2>
                <p className="text-stone-400 mb-8">We organize events, catering and intimate dinners for you.</p>
-               <button className="px-8 py-4 font-black uppercase tracking-widest text-sm rounded-full shadow-lg hover:opacity-90 cursor-pointer" style={{ backgroundColor: '{{PRIMARY_COLOR}}' }}>Contact Us</button>
+               <button className="px-8 py-4 font-black uppercase tracking-widest text-sm rounded-full shadow-lg hover:opacity-90 cursor-pointer" style={{ backgroundColor: '{{PRIMARY_COLOR}}' }}>Kontakt Us</button>
             </div>
          </section>
       </main>

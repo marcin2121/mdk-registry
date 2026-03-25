@@ -21,7 +21,7 @@ export default function ClientWebsite() {
             {{COMPANY_NAME}}
          </h1>
          <nav className="hidden md:flex gap-8 text-sm font-bold tracking-widest uppercase text-stone-600">
-            <a href="#uslugi" className="hover:text-black transition-colors">Services</a>
+            <a href="#uslugi" className="hover:text-black transition-colors">Usługi</a>
             <a href="#kontakt" className="hover:text-black transition-colors">Lokalizacja</a>
          </nav>
          <Link href="/dashboard" className="px-6 py-3 text-sm font-black uppercase tracking-widest text-white transition-opacity hover:opacity-90 shadow-md" style={{ backgroundColor: '{{PRIMARY_COLOR}}' }}>

@@ -1,0 +1,84 @@
+/* MDK-METADATA
+{
+  "dependencies": ["lucide-react", "framer-motion"]
+}
+*/
+"use client"
+import { Star, Quote } from "lucide-react"
+import { motion } from "framer-motion"
+
+export default function Testimonials() {
+  const reviews = [
+    { id: 1, name: "Marcin Molenda", role: "CEO @ MD", text: "MDK to potężne narzędzie. Budowanie Landing Page dla klienta zajmuje mi teraz godziny, a nie dni.", x_text: "MDK is a powerful tool. Building a Landing Page for a client now takes me hours, not days.", rating: 5 },
+    ...[
+      { id: 2, name: "Anna Smith", role: "Product Owner", text: "Struktura layoutu robi wrażenie. Szybkość ładowania 100/100 Lighthouse to standard.", rating: 5 },
+      { id: 3, name: "Tom Anderson", role: "SaaS Dev", text: "Gotowe moduły jak chatbot i kalkulator wyceny to genialny dodatek do szybkich MVP.", rating: 5 }
+    ]
+  ]
+
+  // Używamy oryginalnej tablicy, powyższe to tylko podgląd. 
+  const currentReviews = [
+    { id: 1, name: "Marcin Molenda", role: "CEO @ MD", text: "MDK is a powerful tool. Building a Landing Page for a client now takes me hours, not days.", rating: 5 },
+    { id: 2, name: "Anna Smith", role: "Product Owner", text: "The layout system design is stunning. 100/100 Lighthouse loading speed is standard.", rating: 5 },
+    { id: 3, name: "Tom Anderson", role: "SaaS Dev", text: "Ready-made modules like chatbot or cost calculator are a brilliant addition for quick MVPs.", rating: 5 }
+  ]
+
+  return (
+    <div className="py-24 bg-[#030303] relative overflow-hidden border-t border-zinc-900/50">
+      {/* Background decoration */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.02),transparent)] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <motion.div 
+           className="text-center mb-16"
+           initial={{ opacity: 0, y: -10 }}
+           whileInView={{ opacity: 1, y: 0 }}
+           viewport={{ once: true }}
+           transition={{ duration: 0.5 }}
+        >
+          <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-white mb-4">
+            What Our <span className="bg-gradient-to-r from-[var(--mdk-primary)] to-amber-200 bg-clip-text text-transparent">Clients</span> Say
+          </h2>
+          <p className="text-zinc-500 font-medium max-w-xl mx-auto text-sm">
+            Social proof of choosing MDK framework. Speed, design and conversion.
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {currentReviews.map((rev, i) => (
+             <motion.div 
+                 key={rev.id} 
+                 className="p-8 border border-zinc-800/60 bg-[#0A0A0A]/60 backdrop-blur-md rounded-2xl hover:border-[var(--mdk-primary)]/40 transition-all duration-300 relative group flex flex-col overflow-hidden shadow-2xl"
+                 initial={{ opacity: 0, y: 30 }}
+                 whileInView={{ opacity: 1, y: 0 }}
+                 viewport={{ once: true, margin: "-100px" }}
+                 transition={{ duration: 0.5, delay: i * 0.1, ease: "easeOut" }}
+                 whileHover={{ y: -5 }}
+             >
+                {/* Glow effect on hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[var(--mdk-primary)]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                <Quote size={60} className="absolute -top-4 -right-2 text-zinc-900 group-hover:text-[var(--mdk-primary)]/10 transition-colors duration-500 opacity-30 select-none" strokeWidth={1} />
+                
+                <div className="flex gap-1 mb-6 text-[var(--mdk-primary)]">
+                   {[...Array(rev.rating)].map((_, node_i) => <Star key={node_i} size={14} fill="currentColor" className="drop-shadow-[0_0_8px_rgba(234,179,8,0.3)]" />)}
+                </div>
+
+                <p className="text-zinc-200 font-medium text-sm leading-relaxed mb-8 flex-1 relative z-10">"{rev.text}"</p>
+
+                <div className="border-t border-zinc-900/80 pt-5 mt-auto flex items-center gap-3">
+                   <div className="w-9 h-9 rounded-full bg-gradient-to-br from-zinc-700 to-zinc-900 flex items-center justify-center font-bold text-xs text-white border border-zinc-800">
+                      {rev.name[0]}
+                   </div>
+                   <div>
+                      <h4 className="font-bold text-white text-sm group-hover:text-[var(--mdk-primary)] transition-colors duration-300">{rev.name}</h4>
+                      <span className="text-zinc-600 text-[11px] font-mono tracking-wider">{rev.role}</span>
+                   </div>
+                </div>
+             </motion.div>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
